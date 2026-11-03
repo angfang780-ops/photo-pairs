@@ -2,6 +2,7 @@
   "name": "사진 짝 맞추기",
   "short_name": "짝 맞추기",
   "lang": "ko",
+  "id": "/photo-pairs/app2",
   "start_url": "./",
   "scope": "./",
   "display": "fullscreen",
