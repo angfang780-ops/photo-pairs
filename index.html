@@ -197,7 +197,8 @@
     const gap = Math.round(Math.max(8, Math.min(W, H)*.02)), pad = 14;
     let best = null;
     for (let cols = 1; cols <= n; cols++){
-      const rows = Math.ceil(n/cols);
+      if (n % cols) continue; // 줄마다 꽉 차게 — 빈칸이 생기는 배치는 쓰지 않는다
+      const rows = n/cols;
       const cs = Math.min((W - 2*pad - gap*(cols-1))/cols, (H - 2*pad - gap*(rows-1))/rows);
       if (!best || cs > best.cs) best = { cols, rows, cs };
     }
