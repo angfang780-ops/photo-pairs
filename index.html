@@ -141,7 +141,7 @@
             <button class="btn" type="button" data-v="6" aria-pressed="false">6</button>
             <button class="btn" type="button" data-v="8" aria-pressed="true">8</button>
             <button class="btn" type="button" data-v="12" aria-pressed="false">12</button>
-            <button class="btn" type="button" data-v="16" aria-pressed="false">16</button>
+            <button class="btn" type="button" data-v="18" aria-pressed="false">18</button>
           </div>
           <button id="peek" class="btn" type="button" aria-pressed="true">처음에 보여 주기</button>
           <button id="sound" class="btn" type="button" aria-pressed="true">소리</button>
@@ -185,6 +185,7 @@
 
   let prefs = { count: 8, peek: true, sound: true };
   try { Object.assign(prefs, JSON.parse(store.get(PREFS) || '{}')); } catch(e){}
+  if (prefs.count === 16) prefs.count = 18; // 16장은 6×3 판에 빈칸이 생겨 18장으로 바꿈
   const savePrefs = () => store.set(PREFS, JSON.stringify(prefs));
 
   let G = null, showDone = true, urls = [];
